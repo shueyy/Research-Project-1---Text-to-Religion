@@ -1,0 +1,343 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  mix-blend-mode: difference;
+  padding: 10px;
+  border-radius: 0 8px 8px 0;
+  z-index: 1000;
+  width: 40px;
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+.nav:hover {
+  width: 150px;
+}
+
+.menu-icon {
+  filter: invert(1);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.nav:hover .menu-icon {
+  display: none;
+}
+
+.nav:hover a{
+    opacity: 1;
+}
+
+a {
+  mix-blend-mode: difference;
+  text-decoration: none;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  text-shadow: 0 0 8px white;
+}
+
+a:active {
+  color: white;
+}
+
+.citations-topbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;  
+    background: rgba(0,0,0,0.6);
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: height 0.4s ease;
+    z-index: 999;
+    height: 40px; 
+    text-align: center;
+}
+
+.citations-topbar:hover {
+    height: auto;
+    width: fit-content;
+}
+
+.bar-header {
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.citations{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.citations-topbar:hover .citations{
+    opacity: 1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    background-color: rgba(0,0,0,1);
+}
+
+.bar {
+  height: 10px;
+  /* background: rgba(255, 255, 255, 0.2); */
+  /* background: linear-gradient(to right, #4ade80, #3b82f6, #9333ea); */
+  background-color: whitesmoke;
+  box-shadow: 0 0 20px whitesmoke;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: grow linear;
+  animation-timeline: scroll(y);
+  z-index: 1000;
+}
+
+@keyframes grow {
+  to { transform: scaleX(1); }
+}
+
+.name{
+    position: fixed;
+    filter: invert(1);
+    font-size: 1vh;
+    right: 0;
+    padding: 10pt;
+    mix-blend-mode: difference;
+}
+
+.thesis{
+    padding: 20vw 20vh;
+    background-color:blanchedalmond;
+    font-size: 8vh;
+    font-weight: bold;
+    height: 100vh;
+    text-shadow: 0 0 10px black;
+}
+
+.background{
+    padding: 20vw 20vh;
+    background-color:darkgoldenrod;
+    font-size: 4vh;
+    font-weight: bold;
+    height: 100vh;
+    box-shadow: inset 0 0 600px rgba(0,0,0,0.8);
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.conclusion{
+    padding: 20vw 20vh;
+    background-color:purple;
+    font-size: 4vh;
+    font-weight: bold;
+    height: 100vh;
+    box-shadow: inset 0 0 600px rgba(0,0,0,0.8);
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.parallax{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    align-items: center;
+    padding: 10vw;
+    color: white;
+    text-shadow: 0 0 10px black;
+    width: 60vw;
+    font-size: 1vw;
+    white-space: normal;
+    word-break: break-word; 
+    overflow-wrap: break-word;
+    margin: 0 auto;
+}
+
+.parallax h1 {
+    text-align: left;
+    font-weight: lighter;
+    margin-top: 0.5vh;
+}
+
+.parallax-1{
+    background-image: url('../images/clay.jpg');
+    background-color: orange;
+}
+
+.parallax-2{
+    background-image: url('../images/stone.jpg');
+    background-color: grey;
+}
+
+.parallax-3{
+    background-image: url('../images/papyrus.jpg');
+    background-color: yellow;
+}
+
+.parallax-4{
+    background-image: url('../images/parchment.jpg');
+    background-color: red;
+}
+
+.image-container{
+    position: relative;
+    min-width:100%;
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-container:hover{
+    transform: scale(1.05);
+}
+
+.overlay{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    font-size: clamp(0.05rem, 1vw, 1rem);
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.clay{
+    background-image: url("../images/mardukclay.jpg");
+}
+
+.stone{
+    background-image: url("../images/book.png");
+}
+
+.papyrus{
+    background-image: url("../images/odyssey.jpg");
+}
+
+.parchment{
+    background-image: url("../images/aeneid.jpg");
+}
+
+.god{
+    position: relative;
+    min-width:100%;
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    grid-column: 1;
+}
+
+.god:hover{
+    transform: scale(1.05);
+}
+
+.god:hover .overlay {
+    opacity: 1;
+}
+
+.marduk{
+    background-image: url("../images/Marduk-Babylon.jpeg");
+}
+
+.osiris{
+    background-image: url("../images/osiris.jpeg");
+}
+
+.zeus{
+    background-image: url("../images/zeus.jpg");
+}
+
+.venus{
+    background-image: url("../images/venus.jpg");
+}
+
+.text{
+    align-self: flex-start;
+    padding: 1vw 2vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-weight: bold;
+    grid-column: 1;
+}
+
+.L{
+    grid-column: 1;
+}
+
+.R{
+    grid-column: 2;
+}
+.fade{
+    opacity: 0;
+    animation: fade linear;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+}
+
+@keyframes fade{
+    0% {opacity: 0;}
+    30% {opacity: 1;}
+    70% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.hold{
+    height: 70vh;
+}
